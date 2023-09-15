@@ -1,0 +1,46 @@
+.u-ib {
+  display: inline-block;
+}
+
+.u-anim {
+  opacity: 0;
+  transform: translateY(3.75rem);
+}
+
+.c-header_nav_burger {
+  position: relative;
+  width: 1.8125rem;
+  height: 0.6875rem;
+  margin-left: 1.25rem;
+  display: inline-block;
+  visibility: visible;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.c-header_nav_burger:before,
+.c-header_nav_burger:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  border-top: 2px solid;
+  transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.c-header_nav_burger:before {
+  top: 0;
+}
+
+.c-header_nav_burger:after {
+  bottom: 0;
+}
+
+.c-header_nav_close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  stroke: inherit;
+}
