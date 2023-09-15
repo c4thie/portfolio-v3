@@ -36,16 +36,23 @@ const Footer = () => {
           <p className="text-start text-sm mt-5 max-w-xs font-semibold">
             Thanks for stopping by!
           </p>
-        </div>
-        <p className="text-start text-sm mt-5 max-w-xs font-semibold">
-          Let's connect
-        </p>
-        {/* <div className="flex flex-wrap gap-12">
+          <p className="text-start text-sm max-w-sm font-semibold">
+            Curious about anything? Ask me a question on
+            <Link
+              href="https://curiouscat.live/itscuriouscat"
+              className="font-bold"
+            >
+              Curious Cat
+            </Link>
+            !
+          </p>
+          {/* <div className="flex flex-wrap gap-12">
           <FooterColumn
             title={footerLinks[0].title}
             links={footerLinks[0].links}
           />
         </div> */}
+        </div>
       </div>
     </footer>
   );

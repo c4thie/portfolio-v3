@@ -1,3 +1,5 @@
+import { dalle, spotipod } from "@/public/mockups";
+
 export const NavLinks = [
   { href: "/about", key: "About", text: "About" },
   { href: "/projects", key: "Projects", text: "Projects" },
@@ -20,73 +22,45 @@ export const categoryFilters = [
   "Chatbots",
 ];
 
-export const footerLinks = [
+
+export type Project = {
+  id: string;
+  title: string;
+  src: ImageData;
+  alt: string;
+  description: string;
+  link: string;
+};
+
+export const projects = [
   {
-    title: "For developers",
-    links: [
-      "Go Pro!",
-      "Explore development work",
-      "Development blog",
-      "Code podcast",
-      "Open-source projects",
-      "Refer a Friend",
-      "Code of conduct",
-    ],
+    id: "project-1",
+    title: "SpotiPod",
+    src: spotipod,
+    alt: "SpotiPod",
+    description:
+      "SpotiPod is a web extension that recommends available podcasts based on the user's geolocation and provides features to explore and manage podcasts. It utilizes the Spotify API to fetch podcast data, user subscriptions, and PostgreSQL to store podcast data manually.",
+    tech: "JavaScript, HTML, CSS, Node.js, Express.js, PostgreSQL",
+    link: "https://github.com/c4thie/opera-extension",
   },
   {
-    title: "Hire developers",
-    links: [
-      "Post a job opening",
-      "Post a freelance project",
-      "Search for developers",
-    ],
+    id: "project-2",
+    title: "DALL-E 2.0",
+    src: dalle,
+    alt: "dall-e 2.0",
+    description:
+      "Built with OpenAI's API, DALL-E 2.0 is an AI system that can generate visual images from natural language prompts with community image sharing options.",
+    tech: "React.js, Node.js, MongoDB, Express.js, Tailwind CSS, Cloudinary, OpenAI",
+    link: "https://dallebyc.d2239t59xgkt7i.amplifyapp.com/",
   },
   {
-    title: "Brands",
-    links: ["Advertise with us"],
-  },
-  {
-    title: "Company",
-    links: [
-      "About",
-      "Careers",
-      "Support",
-      "Media kit",
-      "Testimonials",
-      "API",
-      "Terms of service",
-      "Privacy policy",
-      "Cookie policy",
-    ],
-  },
-  {
-    title: "Directories",
-    links: [
-      "Development jobs",
-      "Developers for hire",
-      "Freelance developers for hire",
-      "Tags",
-      "Places",
-    ],
-  },
-  {
-    title: "Development assets",
-    links: [
-      "Code Marketplace",
-      "GitHub Marketplace",
-      "NPM Registry",
-      "Packagephobia",
-    ],
-  },
-  {
-    title: "Development Resources",
-    links: [
-      "Freelancing",
-      "Development Hiring",
-      "Development Portfolio",
-      "Development Education",
-      "Creative Process",
-      "Development Industry Trends",
-    ],
+    id: "project-3",
+    title: "Web Console Redesign",
+    src: dalle,
+    alt: "website design",
+    description:
+      "ReliablyME is a trailblazing venture driven by a profound vision to transform trust-building and recognition using radical accountability. The venture has set out on a mission to empower individuals to be recognized for their social commitments. The company focused on enhancing the visual user interface of the Admin Console. Despite the challenges that came with decrecated source code, we wanted to take the risk and implement new features to facilitate admin management",
+    tech: "React.js, Node.js, Redux.js, Adobe XD, Figma",
+    link: "",
   },
 ];

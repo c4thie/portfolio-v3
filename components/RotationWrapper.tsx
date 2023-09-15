@@ -12,9 +12,17 @@ export default function RotationWrapper(props: Props) {
   const group = useRef<THREE.Group | null>(null);
 
   // Subscribe this component to the render-loop, rotate the mesh every frame
+  // useFrame((state, delta) => {
+  //   group.current!.rotation.y = THREE.MathUtils.degToRad(
+  //     (props.scroll.current * 360) / 1
+  //   );
+  // });
+
+  // Subscribe this component to the render-loop, rotate the mesh every frame
   useFrame((state, delta) => {
-    group.current!.rotation.y = THREE.MathUtils.degToRad(
-      (props.scroll.current * 360) / 1
+    // Rotate the group based on the scroll value
+    group.current!.rotation.y += THREE.MathUtils.degToRad(
+      props.scroll.current * 1 // Adjust the factor to control the rotation speed
     );
   });
 

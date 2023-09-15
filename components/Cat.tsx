@@ -83,9 +83,9 @@ function MeshComponent() {
     console.log(animation);
   }, [animation]);
 
-  useFrame(() => {
-    mesh.current.rotation.y += 0.01;
-  });
+  // useFrame(() => {
+  //   mesh.current.rotation.y += 0.01;
+  // });
 
   return (
     <mesh ref={mesh}>

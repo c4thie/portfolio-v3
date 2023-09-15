@@ -22,9 +22,13 @@ const Navbar = () => {
       <div className="xl:hidden flexCenter gap-4">
         <span className="u-ib u-anim delay-9">
           <button className="c-header_nav_burger" data-header="burger">
-            <svg className="c-header_nav_close">
-              <Image src="/menu.svg" alt="Menu" width={50} height={50} />
-            </svg>
+            <Image
+              className="c-header_nav_close"
+              src="/menu.svg"
+              alt="Menu"
+              width={50}
+              height={50}
+            />
           </button>
         </span>
       </div>
