@@ -2,8 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { footerLinks } from "@/constants";
-
 type ColumnProps = {
   title: string;
   links: Array<string>;
