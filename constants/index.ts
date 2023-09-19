@@ -1,4 +1,4 @@
-import { dalle, spotipod } from "@/public/mockups";
+import { dalle, spotipod, bytesizedboba } from "@/public/mockups";
 
 export const NavLinks = [
   { href: "/about", key: "About", text: "About" },
@@ -22,7 +22,6 @@ export const categoryFilters = [
   "Chatbots",
 ];
 
-
 export type Project = {
   id: string;
   title: string;
@@ -43,24 +42,34 @@ export const projects = [
     tech: "JavaScript, HTML, CSS, Node.js, Express.js, PostgreSQL",
     link: "https://github.com/c4thie/opera-extension",
   },
+  // {
+  //   id: "project-2",
+  //   title: "DALL-E 2.0",
+  //   src: dalle,
+  //   alt: "dall-e 2.0",
+  //   description:
+  //     "Built with OpenAI's API, DALL-E 2.0 is an AI system that can generate visual images from natural language prompts with community image sharing options.",
+  //   tech: "React.js, Node.js, MongoDB, Express.js, Tailwind CSS, Cloudinary, OpenAI",
+  //   link: "https://dallebyc.d2239t59xgkt7i.amplifyapp.com/",
+  // },
   {
     id: "project-2",
-    title: "DALL-E 2.0",
-    src: dalle,
-    alt: "dall-e 2.0",
-    description:
-      "Built with OpenAI's API, DALL-E 2.0 is an AI system that can generate visual images from natural language prompts with community image sharing options.",
-    tech: "React.js, Node.js, MongoDB, Express.js, Tailwind CSS, Cloudinary, OpenAI",
-    link: "https://dallebyc.d2239t59xgkt7i.amplifyapp.com/",
-  },
-  {
-    id: "project-3",
-    title: "Web Console Redesign",
-    src: dalle,
+    title: "Byte Sized Boba",
+    src: bytesizedboba,
     alt: "website design",
     description:
-      "ReliablyME is a trailblazing venture driven by a profound vision to transform trust-building and recognition using radical accountability. The venture has set out on a mission to empower individuals to be recognized for their social commitments. The company focused on enhancing the visual user interface of the Admin Console. Despite the challenges that came with decrecated source code, we wanted to take the risk and implement new features to facilitate admin management",
-    tech: "React.js, Node.js, Redux.js, Adobe XD, Figma",
-    link: "",
+      "Byte Sized Boba is a web application that allows users to discover new bubble tea and beverage combinations. Featuring a simple and cozy boba themed interface, users can share their preferences and moods through a quiz. Byte Sized Boba’s algorithm traverses through our beverage database and presents users with a drink suggestion. Users can then find bubble tea stores near them using our built-in interactive map.",
+    tech: "React.js, Framer Motion, HTML, CSS, Node.js, Express.js, PostgreSQL, Google Maps API, Photoshop, Figma",
+    link: "https://bytesized-beta.vercel.app/",
   },
+  // {
+  //   id: "project-3",
+  //   title: "Web Console Redesign",
+  //   src: dalle,
+  //   alt: "website design",
+  //   description:
+  //     "ReliablyME is a trailblazing venture driven by a profound vision to transform trust-building and recognition using radical accountability. The venture has set out on a mission to empower individuals to be recognized for their social commitments. The company focused on enhancing the visual user interface of the Admin Console. Despite the challenges that came with decrecated source code, we wanted to take the risk and implement new features to facilitate admin management",
+  //   tech: "React.js, Node.js, Redux.js, Adobe XD, Figma",
+  //   link: "",
+  // },
 ];

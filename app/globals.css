@@ -134,7 +134,7 @@ h2 {
 
 .container {
   width: 600vw;
-  height: 100vh;
+  height: 70vh;
   display: flex;
   flex-wrap: wrap;
 }
@@ -155,6 +155,47 @@ h2 {
 }
 
 .panel {
-  width: 100vw;
-  height: 100vh;
+  width: 90vw;
+  height: auto;
+}
+
+.hamburger-line {
+  position: absolute;
+  margin: auto;
+  /* top: 0; */
+  height: 3px;
+  width: 33px;
+  transition: all 400ms ease-out;
+}
+
+/* .collapse {
+  top: 10px;
+  transition: all 100ms ease-out;
+} */
+
+/* .collapse {
+  transform: translate(10px);
+  transition: all 100ms ease-out;
+} */
+.rotate30 {
+  transform: rotate(30deg);
+  transition: all 100ms ease-out;
+}
+.rotate150 {
+  transform: rotate(150deg);
+  transition: all 100ms ease-out;
+}
+
+.rotate45 {
+  transform: rotate(45deg);
+  transition: all 100ms ease-out;
+}
+
+.rotate135 {
+  transform: rotate(135deg);
+  transition: all 100ms ease-out;
+}
+
+.hide {
+  display: none;
 }

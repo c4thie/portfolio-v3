@@ -98,7 +98,7 @@ export function Cat() {
   const scroll = useRef(0);
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center lg:h-screen h-3/4">
       <Canvas className="h-2xl w-2xl">
         <RotationWrapper scroll={scroll}>
           <ambientLight />
