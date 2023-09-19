@@ -1,6 +1,6 @@
 "use client";
 import * as THREE from "three";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, MutableRefObject } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
@@ -27,14 +27,19 @@ interface actions {
 const scene = new THREE.Scene();
 
 function MeshComponent() {
-  const actions: actions = useRef();
+  // const actions: actions = useRef();
+  const actions: MutableRefObject<{ idle: { play: () => void } } | undefined> =
+    useRef();
   const mesh = useRef<Mesh>(null!);
 
   const [model, setModel] = useState<THREE.Object3D | null>(null);
   const [animation, setAnimation] = useState<THREE.AnimationClip[] | null>(
     null
   );
-  const [mixer] = useState(() => new THREE.AnimationMixer(null));
+  // const [mixer] = useState(() => new THREE.AnimationMixer(null));
+  const [mixer] = useState(
+    () => new THREE.AnimationMixer(new THREE.Object3D())
+  );
 
   // Load model
   useEffect(() => {
