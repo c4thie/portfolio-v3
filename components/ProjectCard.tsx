@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 import Link from "next/link";
 
 type Props = {
-  src: string;
+  src: StaticImageData;
   alt: string;
   title: string;
   tech: string;
