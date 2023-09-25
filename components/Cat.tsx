@@ -1,11 +1,20 @@
 "use client";
 import * as THREE from "three";
-import { useRef, useEffect, useState, MutableRefObject } from "react";
+import {
+  Suspense,
+  useRef,
+  useEffect,
+  useState,
+  MutableRefObject,
+  ReactNode,
+  SyntheticEvent,
+} from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { Mesh } from "three";
 import RotationWrapper from "./RotationWrapper";
+import CanvasLoader from "./Loader";
 
 interface group {
   current: {
@@ -26,92 +35,160 @@ interface actions {
 
 const scene = new THREE.Scene();
 
-function MeshComponent() {
-  // const actions: actions = useRef();
-  const actions: MutableRefObject<{ idle: { play: () => void } } | undefined> =
-    useRef();
-  const mesh = useRef<Mesh>(null!);
+// function MeshComponent() {
+//   // const actions: actions = useRef();
+//   const actions: MutableRefObject<{ idle: { play: () => void } } | undefined> =
+//     useRef();
+//   const mesh = useRef<Mesh>(null!);
 
-  const [model, setModel] = useState<THREE.Object3D | null>(null);
-  const [animation, setAnimation] = useState<THREE.AnimationClip[] | null>(
-    null
-  );
-  // const [mixer] = useState(() => new THREE.AnimationMixer(null));
-  const [mixer] = useState(
-    () => new THREE.AnimationMixer(new THREE.Object3D())
-  );
+//   const [model, setModel] = useState<THREE.Object3D | null>(null);
+//   const [animation, setAnimation] = useState<THREE.AnimationClip[] | null>(
+//     null
+//   );
+//   // const [mixer] = useState(() => new THREE.AnimationMixer(null));
+//   const [mixer] = useState(
+//     () => new THREE.AnimationMixer(new THREE.Object3D())
+//   );
 
-  // Load model
-  useEffect(() => {
-    const loader = new GLTFLoader();
-    loader.load(
-      // resource URL
-      "model/scene.gltf",
-      // called when the resource is loaded
-      async function (gltf) {
-        scene.add(gltf.scene);
+//   // Load model
+//   useEffect(() => {
+//     const loader = new GLTFLoader();
+//     loader.load(
+//       // resource URL
+//       "model/scene.gltf",
+//       // called when the resource is loaded
+//       async function (gltf) {
+//         scene.add(gltf.scene);
 
-        gltf.animations; // Array<THREE.AnimationClip>
-        gltf.scene; // THREE.Group
-        gltf.scenes; // Array<THREE.Group>
-        gltf.cameras; // Array<THREE.Camera>
-        gltf.asset; // Object
+//         gltf.animations; // Array<THREE.AnimationClip>
+//         gltf.scene; // THREE.Group
+//         gltf.scenes; // Array<THREE.Group>
+//         gltf.cameras; // Array<THREE.Camera>
+//         gltf.asset; // Object
 
-        gltf.scene.scale.set(0.1, 0.1, 0.1);
-        gltf.scene.translateY(-4);
+//         gltf.scene.scale.set(0.1, 0.1, 0.1);
+//         gltf.scene.translateY(-4);
 
-        const nodes = await gltf.parser.getDependencies("node");
-        const animations = await gltf.parser.getDependencies("animation");
-        setModel(nodes[0]);
-        setAnimation(animations);
-      },
-      // called while loading is progressing
-      function (xhr) {
-        console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
-      },
-      // called when loading has errors
-      function (error) {
-        console.log("An error happened");
-      }
-    );
-  }, []);
+//         const nodes = await gltf.parser.getDependencies("node");
+//         const animations = await gltf.parser.getDependencies("animation");
+//         setModel(nodes[0]);
+//         setAnimation(animations);
+//       },
+//       // called while loading is progressing
+//       function (xhr) {
+//         console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+//       },
+//       // called when loading has errors
+//       function (error) {
+//         console.log("An error happened");
+//       }
+//     );
+//   }, []);
 
-  /* Set animation */
-  useEffect(() => {
-    if (animation && typeof mesh.current != "undefined") {
-      actions.current = {
-        idle: mixer.clipAction(animation[0], mesh.current as THREE.Object3D),
-      };
-      actions.current.idle.play();
-      return () => animation.forEach((clip) => mixer.uncacheClip(clip));
-    }
-    console.log(animation);
-  }, [animation]);
+//   /* Set animation */
+//   useEffect(() => {
+//     if (animation && typeof mesh.current != "undefined") {
+//       actions.current = {
+//         idle: mixer.clipAction(animation[0], mesh.current as THREE.Object3D),
+//       };
+//       actions.current.idle.play();
+//       return () => animation.forEach((clip) => mixer.uncacheClip(clip));
+//     }
+//     console.log(animation);
+//   }, [animation]);
 
-  // useFrame(() => {
-  //   mesh.current.rotation.y += 0.01;
-  // });
+//   // useFrame(() => {
+//   //   mesh.current.rotation.y += 0.01;
+//   // });
 
+//   return (
+//     <mesh ref={mesh}>
+//       <primitive object={scene} />
+//     </mesh>
+//   );
+// }
+
+// export function Cat() {
+//   const scroll = useRef(0);
+
+//   return (
+//     <div className="flex justify-center items-center lg:h-screen h-3/4">
+//       <Canvas className="h-2xl w-2xl">
+//         <RotationWrapper scroll={scroll}>
+//           <ambientLight />
+//           <pointLight position={[10, 10, 10]} />
+//           <OrbitControls />
+//           <MeshComponent />
+//         </RotationWrapper>
+//       </Canvas>
+//     </div>
+//   );
+// }
+
+const Cat = ({ isMobile }: { isMobile: Boolean }) => {
+  const cat = useGLTF("model/scene.gltf");
   return (
-    <mesh ref={mesh}>
-      <primitive object={scene} />
+    <mesh>
+      {/* <hemisphereLight intensity={0.15} groundColor="black" />
+      <pointLight intensity={1} />
+      <spotLight
+        position={[-20, 50, 10]}
+        angle={0.12}
+        penumbra={1}
+        intensity={1}
+        castShadow
+        shadow-mapSize={1024}
+      ></spotLight> */}
+      <ambientLight />
+      <pointLight position={[10, 10, 10]} />
+      <OrbitControls />
+      <primitive
+        object={cat.scene}
+        scale={isMobile ? 0.05 : 0.1}
+        position={isMobile ? [-2, -3, -2.2] : [-2, -3.25, -1.5]}
+        rotation={[-0.01, 1, -0.1]}
+      />
     </mesh>
   );
-}
+};
+const CatCanvas = () => {
+  const [isMobile, setIsMobile] = useState(false);
 
-export function Cat() {
-  const scroll = useRef(0);
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 500px)");
 
+    setIsMobile(mediaQuery.matches);
+
+    const handleMediaQueryChange = (event: MediaQueryListEvent) => {
+      setIsMobile(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
   return (
-    <div className="flex justify-center items-center lg:h-screen h-3/4">
-      <Canvas className="h-2xl w-2xl">
-        <RotationWrapper scroll={scroll}>
-          <ambientLight />
-          <pointLight position={[10, 10, 10]} />
-          <OrbitControls />
-          <MeshComponent />
-        </RotationWrapper>
-      </Canvas>
-    </div>
+    <Canvas
+      frameloop="demand"
+      shadows
+      camera={{ position: [20, 3, 5], fov: 25 }}
+      gl={{ preserveDrawingBuffer: true }}
+      style={{ height: "100vh", width: "100%" }}
+    >
+      <Suspense fallback={<CanvasLoader />}>
+        <OrbitControls
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+        />
+        <Cat isMobile={isMobile} />
+      </Suspense>
+
+      <Preload all />
+    </Canvas>
   );
-}
+};
+
+export default CatCanvas;

@@ -34,15 +34,14 @@ const Footer = () => {
           <p className="text-start text-sm mt-5 max-w-xs font-semibold">
             Thanks for stopping by!
           </p>
-          <p className="text-start text-sm max-w-sm font-semibold">
-            Curious about anything? Ask me a question on
+          <p className="text-start text-sm max-w-md font-semibold">
+            Curious about anything? Ask me a question on{" "}
             <Link
               href="https://curiouscat.live/itscuriouscat"
               className="font-bold"
             >
               Curious Cat
             </Link>
-            !
           </p>
           {/* <div className="flex flex-wrap gap-12">
           <FooterColumn

@@ -1,12 +1,13 @@
 import { Canvas } from "@react-three/fiber";
-import { Cat } from "../components/Cat";
+import Cat from "../components/Cat";
 import RootLayout from "./layout";
 import { Suspense } from "react";
 
 export default function Home() {
   return (
     <section className="flexStart flex-col paddings">
-      <section className="flexCenter gap-6 mx-5 lg:flex-row flex-col">
+      {/* <section className="flexCenter flex-col"> */}
+      <div className="flexCenter gap-6 mx-5 lg:flex-row flex-col">
         <h2 className="font-catavalo md:text-[116px] text-[76px]">
           Curious Cat
         </h2>
@@ -15,7 +16,13 @@ export default function Home() {
             <Cat />
           </Suspense>
         </div>
-      </section>
+      </div>
+      <div className="relative xs:bottom-10 bottom-32 w-full flex justify-center items-center pt-10">
+        <div className="flex justify-center items-start p-2 mt-15">
+          <div className="pt-5 arrow-down cursor-pointer"></div>
+        </div>
+      </div>
+      {/* </section> */}
     </section>
   );
 }
