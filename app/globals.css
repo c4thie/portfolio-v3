@@ -78,6 +78,10 @@ h2 {
   @apply flex items-center justify-start;
 }
 
+.flexEnd {
+  @apply flex items-center justify-end;
+}
+
 .text-small {
   @apply text-sm font-medium;
 }
@@ -162,38 +166,33 @@ h2 {
 .hamburger-line {
   position: absolute;
   margin: auto;
-  /* top: 0; */
-  height: 3px;
+  height: 2px;
   width: 33px;
   transition: all 400ms ease-out;
 }
 
-/* .collapse {
-  top: 10px;
-  transition: all 100ms ease-out;
-} */
-
-/* .collapse {
-  transform: translate(10px);
-  transition: all 100ms ease-out;
-} */
+.collapse {
+  transform: rotate(30deg);
+  opacity: 0;
+  transition: all 200ms ease-out;
+}
 .rotate30 {
   transform: rotate(30deg);
-  transition: all 100ms ease-out;
+  transition: all 200ms ease-out;
 }
 .rotate150 {
-  transform: rotate(150deg);
-  transition: all 100ms ease-out;
+  transform: rotate(-30deg);
+  transition: all 200ms ease-out;
 }
 
 .rotate45 {
-  transform: rotate(45deg);
-  transition: all 100ms ease-out;
+  transform: rotate(42deg);
+  transition: all 200ms ease-out;
 }
 
 .rotate135 {
-  transform: rotate(135deg);
-  transition: all 100ms ease-out;
+  transform: rotate(-42deg);
+  transition: all 200ms ease-out;
 }
 
 .hide {
@@ -270,4 +269,15 @@ button.navlinks:hover {
 button.navlinks:focus,
 button.navlinks:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.canvas-loader {
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.1s infinite ease;
+  transform: translateZ(0);
 }

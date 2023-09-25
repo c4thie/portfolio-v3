@@ -12,38 +12,6 @@ interface CloseIconProps extends OpenState {
   close(e: React.MouseEvent<HTMLElement>): void;
 }
 
-// const MenuContainerStyle: React.CSSProperties = {
-//   position: "absolute",
-//   right: "24px",
-//   zIndex: 12,
-//   cursor: "pointer",
-//   width: "33px",
-//   height: "21px",
-// };
-
-// const HamburgerLineStyle: React.CSSProperties = {
-//   position: "absolute",
-//   margin: "auto",
-//   top: "0px",
-//   height: "3px",
-//   width: "33px",
-//   transition: "all 400ms ease-out",
-// };
-
-// const Line1Style: React.CSSProperties = {
-//   ...HamburgerLineStyle,
-//   top: "0",
-// };
-
-// const Line2Style: React.CSSProperties = {
-//   ...HamburgerLineStyle,
-//   top: "9px",
-// };
-
-// const Line3Style: React.CSSProperties = {
-//   ...HamburgerLineStyle,
-//   top: "18px",
-// };
 const NavIcon: React.FC<CloseIconProps> = ({
   isOpen,
   scrolledDown,
@@ -59,24 +27,24 @@ const NavIcon: React.FC<CloseIconProps> = ({
     >
       <div
         className={`MenuIcon-line x ${
-          isOpen ? "rotate30 translate" : ""
-        } hamburger-line top-0`}
+          isOpen ? "rotate45 translate-y--20" : "top-0"
+        } hamburger-line`}
         style={{
           backgroundColor: isOpen || scrolledDown ? "#cfa827" : "#000",
         }}
       ></div>
       <div
         className={`MenuIcon-line y ${
-          isOpen ? "collapse" : ""
-        } hamburger-line top-[9px]`}
+          isOpen ? "collapse" : "top-[9px]"
+        } hamburger-line`}
         style={{
           backgroundColor: isOpen || scrolledDown ? "#cfa827" : "#000",
         }}
       ></div>
       <div
         className={`MenuIcon-line z ${
-          isOpen ? "rotate150 translate" : ""
-        } hamburger-line top-[18px]`}
+          isOpen ? "rotate135 translate-y-20" : "top-[18px]"
+        } hamburger-line`}
         style={{
           backgroundColor: isOpen || scrolledDown ? "#cfa827" : "#000",
         }}
