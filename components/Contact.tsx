@@ -42,13 +42,13 @@ const Contact = () => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-
     emailjs
       .send(
-        "service_8s3wu8c",
+        "service_4zn29k4",
         "template_ky37om8",
         {
           from_name: form.name,
