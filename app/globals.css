@@ -38,10 +38,7 @@
 @layer base {
   html {
     font-family: "Mori";
-    overflow-y: scroll;
-    height: 100%;
-    -webkit-overflow-scrolling: touch;
-    overflow-scrolling: touch;
+    overflow-y: visible;
   }
 }
 
@@ -57,13 +54,12 @@ h2 {
     "Helvetica Neue", serif;
 }
 
-.scene {
+main {
   width: 100vw;
-  height: 100vh;
-}
-
-.canvas {
-  background: #000;
+  height: 90vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
 }
 
 .flexCenter {

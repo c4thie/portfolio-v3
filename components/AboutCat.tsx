@@ -25,11 +25,10 @@ const Cat = ({ isMobile }: { isMobile: Boolean }) => {
     <mesh>
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
-      <OrbitControls />
       <primitive
         object={cat.scene}
-        scale={isMobile ? 0.5 : 0.6}
-        position={isMobile ? [-2, -4, -2.2] : [-2, -4.25, -1.5]}
+        scale={isMobile ? 0.3 : 0.55}
+        position={isMobile ? [0, -1, -2.2] : [-6.7, -4.25, -1.5]}
         rotation={[-0.01, 1, -0.1]}
       />
     </mesh>

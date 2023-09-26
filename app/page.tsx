@@ -1,26 +1,43 @@
+"use client";
 import { Canvas } from "@react-three/fiber";
-import Cat from "../components/HomeCat";
+import { Cat, CatModel } from "../components/HomeCat";
 import RootLayout from "./layout";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
+import { Scroll, ScrollControls, Html } from "@react-three/drei";
+import Interface from "@/components/Interface";
+import ScrollManager from "@/components/ScrollManager";
+import Experience from "@/components/Experience";
+import { MotionConfig } from "framer-motion";
 
 export default function Home() {
+  const [section, setSection] = useState(0);
   return (
-    <section className="flexStart flex-col paddings">
-      <div className="flexCenter gap-6 mx-5 lg:flex-row flex-col">
-        <h2 className="font-catavalo md:text-[116px] text-[76px]">
-          Curious Cat
-        </h2>
-        <div className="lg:w-[50%] md:[75%] w-[100%]">
-          {/* <Suspense> */}
-          <Cat />
-          {/* </Suspense> */}
-        </div>
-      </div>
-      <div className="relative xs:bottom-10 bottom-32 w-full flex justify-center items-center pt-10">
-        <div className="flex justify-center items-start p-2 mt-15">
-          <div className="pt-5 arrow-down cursor-pointer"></div>
-        </div>
-      </div>
-    </section>
+    <MotionConfig
+      transition={{
+        type: "spring",
+        mass: 5,
+        stiffness: 50,
+        damping: 50,
+        restDelta: 0.0001,
+      }}
+    >
+      <Canvas
+        shadows
+        camera={{ position: [20, 10, 10], fov: 25 }}
+        gl={{ preserveDrawingBuffer: true }}
+        style={{ height: "100vh", width: "100%" }}
+      >
+        <color attach="background" args={["#ececec"]} />
+        <ScrollControls pages={5} damping={0.1}>
+          <ScrollManager section={section} onSectionChange={setSection} />
+          <Scroll>
+            <Experience section={section} />
+          </Scroll>
+          <Scroll html>
+            <Interface />
+          </Scroll>
+        </ScrollControls>
+      </Canvas>
+    </MotionConfig>
   );
 }

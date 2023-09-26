@@ -9,12 +9,12 @@ import localFont from "next/font/local";
 const mori = localFont({
   src: [
     {
-      path: '../public/fonts/PPMori-Extralight.otf',
-      weight: '400',
+      path: "../public/fonts/PPMori-Extralight.otf",
+      weight: "400",
     },
     {
-      path: '../public/fonts/PPMori-SemiBold.otf',
-      weight: '600',
+      path: "../public/fonts/PPMori-SemiBold.otf",
+      weight: "600",
     },
   ],
 });
@@ -38,7 +38,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <main>{children}</main>
+        <main className="scene">{children}</main>
         <Footer />
       </body>
     </html>

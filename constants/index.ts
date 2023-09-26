@@ -73,3 +73,26 @@ export const projects = [
   //   link: "",
   // },
 ];
+
+export const Tech = [
+  {
+    name: "JavaScript/Typescript",
+    level: 90,
+  },
+  {
+    name: "C/C++",
+    level: 80,
+  },
+  {
+    name: "Python",
+    level: 85,
+  },
+  {
+    name: "HTML/CSS",
+    level: 95,
+  },
+  {
+    name: "R",
+    level: 65,
+  },
+];
