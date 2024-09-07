@@ -5,7 +5,7 @@ import RootLayout from "./layout";
 import { Suspense, useState } from "react";
 import { Scroll, ScrollControls, Html } from "@react-three/drei";
 import Interface from "@/components/Interface";
-import ScrollManager from "@/components/ScrollManager";
+// import ScrollManager from "@/components/ScrollManager";
 import Experience from "@/components/Experience";
 import { MotionConfig } from "framer-motion";
 
@@ -25,11 +25,10 @@ export default function Home() {
         shadows
         camera={{ position: [20, 10, 10], fov: 25 }}
         gl={{ preserveDrawingBuffer: true }}
-        style={{ height: "100vh", width: "100%" }}
+        style={{ height: "100%", width: "100%" }}
       >
         <color attach="background" args={["#ececec"]} />
         <ScrollControls pages={5} damping={0.1}>
-          <ScrollManager section={section} onSectionChange={setSection} />
           <Scroll>
             <Experience section={section} />
           </Scroll>

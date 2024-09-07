@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 const Skills = () => {
   return (
-    <motion.div whileInView={"visible"}>
-      <h2 className="md:text-[106px] text-[66px] font-catavalo font-semibold">
+    <motion.div whileInView={"visible"} className="flexStart flex-col paddings">
+      <h2 className="md:text-[96px] text-[66px] font-catavalo">
         Toolbox
       </h2>
       <div className="mt-8 space-y-4">

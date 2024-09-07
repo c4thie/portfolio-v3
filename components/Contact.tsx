@@ -38,12 +38,12 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (event: Event) => {
+  const handleChange = (event: any) => {
     const { name, value } = event.target as HTMLInputElement;
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault();
     setLoading(true);
     emailjs
@@ -77,12 +77,12 @@ const Contact = () => {
       );
   };
   return (
-    <div className="xl:mt-12 xl:flex-row flex-col flex gap-8">
+    <div className="xl:mt-12 xl:flex-row flex-col flex gap-8 pb-3">
       <div className="xl:mt-12 flex-col flexCenter gap-3">
         <h2 className="md:text-[106px] text-[66px]">Let's chat!</h2>
         <motion.div
           variants={slideIn("right", "tween", 0.2, 1)}
-          className="xl:flex-1 md:w-[550px] w-[350px] h-auto"
+          className="xl:flex-1 md:w-[600px] w-[350px] h-auto"
         >
           <AboutCat />
         </motion.div>
@@ -92,7 +92,7 @@ const Contact = () => {
         className="flex-1 bg-black-100 p-8 rounded-2xl md:w-[550px] w-[350px]"
       >
         <form
-          ref={formRef}
+          // ref={formRef}
           onSubmit={handleSubmit}
           className="mt-12 flex flex-col gap-8"
         >
@@ -123,7 +123,6 @@ const Contact = () => {
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4"> Message</span>
             <input
-              rows="7"
               name="message"
               value={form.message}
               onChange={handleChange}

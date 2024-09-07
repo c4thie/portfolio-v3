@@ -10,8 +10,10 @@ import ProjectsList from "@/components/ProjectsListDefault";
 const Projects = () => {
   return (
     <div className="flexStart flex-col paddings">
-      <h2 className="font-catavalo text-[96px]">Projects</h2>
-      <p className="font-mori text-[20px]">Here are a few recent projects</p>
+      <h2 className="md:text-[96px] text-[66px] font-catavalo">Projects</h2>
+      <p className="font-mori text-[20px]">
+        Here are a few recent projects
+      </p>
       <ProjectsList />
     </div>
   );

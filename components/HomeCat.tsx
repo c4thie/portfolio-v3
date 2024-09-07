@@ -1,21 +1,8 @@
 "use client";
 import * as THREE from "three";
-import {
-  Suspense,
-  useEffect,
-  useState,
-  useRef,
-  MutableRefObject,
-  ReactNode,
-  SyntheticEvent,
-} from "react";
+import { Suspense, useEffect, useState, useRef } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import {
-  OrbitControls,
-  Preload,
-  useAnimations,
-  useGLTF,
-} from "@react-three/drei";
+import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "./Loader";
 import { motion } from "framer-motion-3d";
 
@@ -52,12 +39,7 @@ export const Cat = ({
       <mesh>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
-        <primitive
-          object={cat.scene}
-          // scale={isMobile ? 0.05 : 0.1}
-          // position={isMobile ? [-2, -3, -2.2] : [-2, -3.25, -1.5]}
-          // rotation={[-0.01, 1, -0.1]}
-        />
+        <primitive object={cat.scene} />
       </mesh>
     </motion.group>
   );
@@ -87,7 +69,6 @@ export const CatModel = () => {
         maxPolarAngle={Math.PI / 2}
         minPolarAngle={Math.PI / 2}
       />
-      {/* <Cat isMobile={isMobile} /> */}
     </Suspense>
   );
 };
@@ -112,7 +93,6 @@ const CatCanvas = () => {
 
   return (
     <Canvas
-      // frameloop="demand"
       shadows
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
@@ -124,7 +104,6 @@ const CatCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        {/* <Cat isMobile={isMobile} /> */}
       </Suspense>
       <Preload all />
     </Canvas>

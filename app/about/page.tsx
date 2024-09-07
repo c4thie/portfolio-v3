@@ -8,9 +8,9 @@ import { motion } from "framer-motion";
 const About = () => {
   return (
     <div className="flexStart flex-col paddings gap-3">
-      <h2 className="font-catavalo text-[96px]">About</h2>
+      <h2 className="md:text-[96px] text-[66px] font-catavalo">About</h2>
       <motion.p
-        className="font-mori text-[20px]"
+        className="font-mori text-[20px] pl-40 pr-40 pt-10"
         initial={{
           opacity: 0,
           y: 25,
@@ -30,8 +30,7 @@ const About = () => {
           <Link href="https://siyu.carrd.co">carrd.co</Link>
         </span>{" "}
         mini profiles and Wattpad book covers for her friends. Currently, she is
-        studying Computer Science @ University of Waterloo. Her passion resides
-        in tinkering with interactive projects and animations{" "}
+        studying Computer Science @ University of Waterloo, with a specialization in Human-Computer Interaction. Her passion resides in tinkering with interactive projects and animations.{" "}
         <span className="text-yellow-500">✽</span>
         {/* <AboutCat /> */}
       </motion.p>

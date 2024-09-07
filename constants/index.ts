@@ -77,19 +77,19 @@ export const projects = [
 export const Tech = [
   {
     name: "JavaScript/Typescript",
-    level: 90,
+    level: 95,
   },
   {
     name: "C/C++",
-    level: 80,
-  },
-  {
-    name: "Python",
     level: 85,
   },
   {
+    name: "Python",
+    level: 80,
+  },
+  {
     name: "HTML/CSS",
-    level: 95,
+    level: 90,
   },
   {
     name: "R",

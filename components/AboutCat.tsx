@@ -57,7 +57,7 @@ const CatCanvas = () => {
       shadows
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
-      style={{ height: "50vh", width: "100%" }}
+      style={{ maxHeight: "100%", maxWidth: "100%" }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
