@@ -30,7 +30,7 @@ const About = () => {
           <Link href="https://siyu.carrd.co">carrd.co</Link>
         </span>{" "}
         mini profiles and Wattpad book covers for her friends. Currently, she is
-        studying Computer Science @ University of Waterloo, with a specialization in Human-Computer Interaction. Her passion resides in tinkering with interactive projects and animations.{" "}
+        studying Computer Science @ University of Waterloo, specializing in HCI. Her passion resides in tinkering with interactive projects and animations.{" "}
         <span className="text-yellow-500">✽</span>
         {/* <AboutCat /> */}
       </motion.p>
