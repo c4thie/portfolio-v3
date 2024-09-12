@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 
 type Props = {
+  id: string;
   src: StaticImageData;
   alt: string;
   title: string;
@@ -11,7 +12,15 @@ type Props = {
   link?: string;
 };
 
-const ProjectCard = ({ src, alt, tech, title, description, link }: Props) => {
+const ProjectCard = ({
+  id,
+  src,
+  alt,
+  tech,
+  title,
+  description,
+  link,
+}: Props) => {
   return (
     <section className="first:md:mt-5 first:mt-0 md:mt-5 mt-5 flex md:flex-row flex-col items-center font-mori">
       <Image
@@ -36,8 +45,16 @@ const ProjectCard = ({ src, alt, tech, title, description, link }: Props) => {
           {tech}
         </span>
         {link && (
-          <Link href={link} className="font-semibold text-[16px]">
-            View Project
+          <Link
+            href={link}
+            className={`font-semibold text-[16px] ${
+              id == "project-1" ? "cursor-not-allowed text-[#5b5b5b]" : "cursor-auto"
+            }`}
+            onClick={(event) => {
+              if (id == "project-1") event.preventDefault();
+            }}
+          >
+            {id == "project-1" ? "Coming Soon" : "View Project"}
           </Link>
         )}
       </div>

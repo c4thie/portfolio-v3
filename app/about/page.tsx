@@ -10,7 +10,7 @@ const About = () => {
     <div className="flexStart flex-col paddings gap-3">
       <h2 className="md:text-[96px] text-[66px] font-catavalo">About</h2>
       <motion.p
-        className="font-mori text-[20px] pl-40 pr-40 pt-10"
+        className="font-mori text-[20px] pl-35 pr-35 pt-10"
         initial={{
           opacity: 0,
           y: 25,

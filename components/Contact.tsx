@@ -46,9 +46,10 @@ const Contact = () => {
   const handleSubmit = (event: any) => {
     event.preventDefault();
     setLoading(true);
+    emailjs.init("A2mGiOoYodiZiB3sp");
     emailjs
       .send(
-        "service_4zn29k4",
+        "service_0stqsk4",
         "template_ky37om8",
         {
           from_name: form.name,
@@ -57,7 +58,7 @@ const Contact = () => {
           to_email: "cathieyan@hotmail.com",
           message: form.message,
         },
-        "zThX9urh1XdszfUgQ"
+        // "A2mGiOoYodiZiB3sp"
       )
       .then(
         () => {

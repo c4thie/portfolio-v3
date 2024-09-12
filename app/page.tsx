@@ -25,11 +25,11 @@ export default function Home() {
         shadows
         camera={{ position: [20, 10, 10], fov: 25 }}
         gl={{ preserveDrawingBuffer: true }}
-        style={{ height: "100%", width: "100%" }}
+        style={{ height: "100%", width: "100%", overflow: "visible" }}
       >
         <color attach="background" args={["#ececec"]} />
         <ScrollControls pages={5} damping={0.1}>
-          <Scroll>
+          <Scroll style={{ overflow: "visible" }}>
             <Experience section={section} />
           </Scroll>
           <Scroll html>

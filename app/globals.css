@@ -61,8 +61,7 @@ body {
 
 main {
   width: 100vw;
-  height: 80vh;
-  overflow-y: none;
+  height: 79vh;
   -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch;
 }

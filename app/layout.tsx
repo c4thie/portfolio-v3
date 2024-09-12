@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import Script from "next/script";
 
 import "./globals.css";
 import type { Metadata } from "next";
@@ -35,12 +36,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="overflow-hidden">
-        <Navbar />
-        <main className="scene">{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <>
+      <Script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+      ></Script>
+      <html lang="en">
+        <body className="md:overflow-hidden overflow-auto">
+          <Navbar />
+          <main className="scene overflow-y-auto">{children}</main>
+          <Footer />
+        </body>
+      </html>
+    </>
   );
 }

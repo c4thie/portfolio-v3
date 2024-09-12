@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 const ProjectsList = () => {
   return (
-    <div className="px-19">
+    <div className="px-25">
       {projects.map((project, i) => (
         <motion.div
           key={i}
