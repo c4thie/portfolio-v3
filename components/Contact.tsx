@@ -52,12 +52,12 @@ const Contact = () => {
         "service_0stqsk4",
         "template_ky37om8",
         {
-          from_name: form.name,
-          to_name: "Cathie",
-          from_email: form.email,
-          to_email: "cathieyan@hotmail.com",
+          to_name: form.name,
+          from_name: "Cathie",
+          to_email: form.email,
+          from_email: "cathieyan@hotmail.com",
           message: form.message,
-        },
+        }
         // "A2mGiOoYodiZiB3sp"
       )
       .then(
