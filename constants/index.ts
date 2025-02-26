@@ -1,4 +1,4 @@
-import { dalle, spotipod, bytesizedboba } from "@/public/mockups";
+import { dalle, spotipod, bytesizedboba, makeus1 } from "@/public/mockups";
 
 export const NavLinks = [
   { href: "/about", key: "About", text: "About" },
@@ -42,16 +42,6 @@ export const projects = [
     tech: "JavaScript, HTML, CSS, Node.js, Express.js, PostgreSQL",
     link: "https://github.com/c4thie/opera-extension",
   },
-  // {
-  //   id: "project-2",
-  //   title: "DALL-E 2.0",
-  //   src: dalle,
-  //   alt: "dall-e 2.0",
-  //   description:
-  //     "Built with OpenAI's API, DALL-E 2.0 is an AI system that can generate visual images from natural language prompts with community image sharing options.",
-  //   tech: "React.js, Node.js, MongoDB, Express.js, Tailwind CSS, Cloudinary, OpenAI",
-  //   link: "https://dallebyc.d2239t59xgkt7i.amplifyapp.com/",
-  // },
   {
     id: "project-2",
     title: "Byte Sized Boba",
@@ -62,6 +52,25 @@ export const projects = [
     tech: "React.js, Framer Motion, HTML, CSS, Node.js, Express.js, PostgreSQL, Google Maps API, Photoshop, Figma",
     link: "https://bytesized-beta.vercel.app/",
   },
+  {
+    id: "project-3",
+    title: "MakeUs",
+    src: makeus1,
+    alt: "makeus",
+    description:
+      "Creating a new experience and interface for Skincare product tracking",
+    tech: "Figma, Canva, Coolors",
+    link: "makeus",
+  },
+  // {
+  //   id: "project-4",
+  //   title: "Food Waste App",
+  //   src: app,
+  //   alt: "food waste",
+  //   description:
+  //   An end-to-end project from concept ideation to interaction and prototyping.
+  //   link: "",
+  // },
   // {
   //   id: "project-3",
   //   title: "Web Console Redesign",
@@ -72,6 +81,7 @@ export const projects = [
   //   tech: "React.js, Node.js, Redux.js, Adobe XD, Figma",
   //   link: "",
   // },
+
 ];
 
 export const Tech = [

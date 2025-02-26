@@ -48,7 +48,7 @@ const ProjectCard = ({
           <Link
             href={link}
             className={`font-semibold text-[16px] ${
-              id == "project-1" ? "cursor-not-allowed text-[#5b5b5b]" : "cursor-auto"
+              id == "project-1" ? "cursor-not-allowed text-[#5b5b5b]" : "cursor-pointer"
             }`}
             onClick={(event) => {
               if (id == "project-1") event.preventDefault();

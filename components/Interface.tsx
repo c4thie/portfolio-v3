@@ -50,9 +50,6 @@ const Interface = () => {
         <Skills />
       </Section>
       <Section>
-        <About />
-      </Section>
-      <Section>
         <Projects />
       </Section>
       <Section>
