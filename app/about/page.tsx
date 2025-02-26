@@ -32,7 +32,6 @@ const About = () => {
           studying Computer Science @ University of Waterloo, specializing in HCI. Her passion resides in tinkering with interactive projects and animations.{" "}
           <span className="text-yellow-500">✽</span>
         </div>
-        {/* <AboutCat /> */}
         <Image className="self-center" src="/sign.jpg" alt="signature" width={600} height={600}/>
       </motion.p>
     </div>
